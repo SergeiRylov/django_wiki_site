@@ -1,0 +1,37 @@
+{% extends 'base/page.html' %}
+{% load base_tag %}
+
+{% block page %}
+
+<div class="row">
+    <div class="col-4">
+        <div class="card">
+            <div class="card-header">
+                <h4>
+                    {{contact.name}}
+                </h4>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-4">
+                        <img src="{% if contact.pic %}{{ contact.pic.url }}{% endif %}" alt="{{ contact.name }}" class="img-fluid mb-3">
+                        <a>Изменить</a>
+                    </div>
+                    <div class="col-6">
+                        <table class="table table-borderless">
+                            <tbody>
+                                <tr>
+                                    <td><strong>День рождения:</strong></td>
+                                    <td>{{ contact.birthday }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,68 @@
+{% load i18n %}
+
+<div class="modal-dialog">
+    <form method="post" action="{% url 'tst:modal' %}">
+        {% csrf_token %}
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">{{department.name}}</h4>
+                <button class="btn-close py-0" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                {% include 'base/forms/select2.html' with field=form.username %}
+
+
+                <div class="select-box">
+                    <div class="options-container">
+                        <div class="selection-option">
+                            <input class="radio" id="webdesigner" type="radio" name="category">
+                            <label class="mb-0" for="webdesigner">web-designer</label>
+                        </div>
+                        <div class="selection-option">
+                            <input class="radio" id="film" type="radio" name="category">
+                            <label class="mb-0" for="film">Film &amp; Animation</label>
+                        </div>
+                        <div class="selection-option">
+                            <input class="radio" id="software" type="radio" name="category">
+                            <label class="mb-0" for="software">software-engineer</label>
+                        </div>
+                        <div class="selection-option">
+                            <input class="radio" id="art" type="radio" name="category">
+                            <label class="mb-0" for="art">Art</label>
+                        </div>
+                        <div class="selection-option">
+                            <input class="radio" id="music" type="radio" name="category">
+                            <label class="mb-0" for="music">Music</label>
+                        </div>
+                        <div class="selection-option">
+                            <input class="radio" id="travel" type="radio" name="category">
+                            <label class="mb-0" for="travel">Travel &amp; Events</label>
+                        </div>
+                        <div class="selection-option">
+                            <input class="radio" id="sports" type="radio" name="category">
+                            <label class="mb-0" for="sports">Sports</label>
+                        </div>
+                        <div class="selection-option">
+                            <input class="radio" id="news" type="radio" name="category">
+                            <label class="mb-0" for="news">News &amp; Politics</label>
+                        </div>
+                        <div class="selection-option">
+                            <input class="radio" id="tutorials" type="radio" name="category">
+                            <label class="mb-0" for="tutorials">Tutorials</label>
+                        </div>
+                    </div>
+                    <div class="selected-box">Select Your Profession</div>
+                    <div class="search-box">
+                        <input type="text" placeholder="Start Typing...">
+                    </div>
+                </div>
+
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-link" type="button" data-bs-dismiss="modal">Close</button>
+                <button class="btn btn-primary" type="button" onclick="formSubmit(this);">{% trans 'Save' %}</button>
+            </div>
+        </div>
+    </form>
+</div>

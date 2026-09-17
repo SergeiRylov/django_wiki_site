@@ -33,8 +33,8 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     "app_base",
     "app_wiki",
+    "demo",
     "fakelogin",
-    #"tst",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -128,7 +128,7 @@ LANGUAGES = (
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = "static/"
-STATIC_root = "static/"
+STATIC_ROOT = "static/"
 
 MEDIA_URL = "files/"
 MEDIA_ROOT = "files/"

@@ -1,0 +1,35 @@
+{% extends 'app_base/page.html' %}
+{% load base_tag %}
+
+{% block page %}
+<div class="row">
+    <div class="col-5">
+        <form method="POST">
+            {% csrf_token %}
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">
+                        Проверка
+                    </h4>
+                </div>
+                <div class="card-body">
+                    {% include 'app_base/forms/input.html' with field=form.first_name %}
+                    {% include 'app_base/forms/date.html' with field=form.birthday %}
+                    
+                </div>
+                <div class="card-footer">
+                    <button type="submit" name="submit" value="delete" class="btn btn-danger">
+                        Delete
+                    </button>
+                    <button type="submit" class="btn btn-success float-end">
+                        Save
+                    </button>
+                    
+                </div>
+            </div>
+        </form>
+    </div>
+    {% endblock %}
+
+    {% block js %}
+    {% endblock %}
