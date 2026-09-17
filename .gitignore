@@ -4,4 +4,4 @@ __pycache__
 *django.mo
 /files/*
 /static/*
-tst/
+/tst/
