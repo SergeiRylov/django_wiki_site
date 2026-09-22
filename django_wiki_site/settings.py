@@ -127,8 +127,19 @@ LANGUAGES = (
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
-STATIC_URL = "static/"
-STATIC_ROOT = "static/"
+STATIC_URL = "/static/"
+STATICFILES_DIRS = [
+    BASE_DIR / "staticfiles",  # общий каталог
+]
+
+# Куда collectstatic собирает всё для продакшена
+STATIC_ROOT = BASE_DIR / "static"
+
+# Поисковики статики — по умолчанию AppDirectoriesFinder уже включён
+STATICFILES_FINDERS = [
+    "django.contrib.staticfiles.finders.FileSystemFinder",  # ищет в STATICFILES_DIRS
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",  # ищет в app/static/
+]
 
 MEDIA_URL = "files/"
 MEDIA_ROOT = "files/"
